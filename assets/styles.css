@@ -7,3 +7,7 @@
 #logo {
     width: 60px;
 }
+
+.text-justify {
+    text-align: justify;
+}

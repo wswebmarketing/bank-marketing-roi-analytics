@@ -49,7 +49,7 @@ def executive_resume():
         "total_segments": total_segments,
         "gold_count": gold_count,
         "destructive_count": destructive_count,
-        "roi_gold": roi_gold 
+        "roi_gold": float(roi_gold) 
     }
 
 def profit_by_category():
