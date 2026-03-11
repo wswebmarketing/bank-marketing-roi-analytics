@@ -11,15 +11,13 @@ from utils.simulation import(
     compare_scenarios
 )
 #LIBS UTILIZADAS APENAS PARA DESENVOLVIMENTO
-from tabulate import tabulate
-from pprint import pprint
+'''from tabulate import tabulate
+from pprint import pprint'''
 import pandas as pd
 import plotly.express as px
 
 segments = get_segments()
-print(f"{segments}\n")
 resume = executive_resume()
-pprint(resume)
 
 avg_profit = round(segments["expected_profit"].mean(), 2)
 
@@ -99,7 +97,7 @@ layout = html.Div(
                         ),
                         html.P(
                             "Modelo analítico baseado em lucratividade esperada e ROI para redistribuição estratégica de orçamento.",
-                            className = "text-justify, mt-3"
+                            className = "text-justify mt-3"
                         )
                     ],
                     width = 12
