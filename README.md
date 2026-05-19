@@ -1,127 +1,142 @@
 # Bank Marketing Strategic Segmentation Dashboard
 
-Strategic analytics dashboard built with **Python + Dash** to identify profitable customer segments in bank marketing campaigns and simulate strategic budget allocation scenarios based on **ROI and expected profitability**.
+## Profitability-Oriented Customer Intelligence
 
-This project demonstrates how **data analytics can support strategic marketing decisions**, improving campaign efficiency and maximizing profitability.
+Analytical dashboard designed to identify high-value customer segments in marketing campaigns and optimize budget allocation through profitability and ROI analysis
 
----
+This project combines customer segmentation, profitability modelling, and scenario simulation to support data-driven marketing decisions and improve campaign efficiency.
 
-# Project Overview
+# [PT]
 
-Marketing campaigns often treat the customer base uniformly, allocating resources without considering the profitability potential of each segment.
+## Resumo
 
-This project applies **data segmentation, profitability modeling, and scenario simulation** to answer a key strategic question:
+Este projeto apresenta uma solução analítica de segmentação estratégica de clientes voltada para campanhas de marketing.
 
-**Where should marketing investment be concentrated to maximize ROI?**
+O objetivo é identificar segmentos com maior potencial de lucratividade e otimizar a distribuição de investimentos com base em métricas de desempenho e retorno financeiro.
 
-The solution builds a segmentation model that evaluates each customer segment based on:
+A análise integra:
 
-* Conversion rate
-* Expected revenue
-* Expected cost
-* Expected profit
-* Return on Investment (ROI)
+- segmentação de clientes;
+- modelagem de lucratividade;
+- análise de ROI;
+- simulação de cenários;
+- visualização interativa.
 
-The result is a **strategic classification of segments** and a **simulation model for budget redistribution**.
+## Objetivo Estratégico
 
----
+Campanhas de marketing frequentemente distribuem investimentos de forma uniforme, sem considerar o potencial de retorno de cada segmento.
 
-# Analytical Model
+Este projeto busca responder uma questão estratégica central:
 
-Customer segments are created by combining key demographic and campaign variables:
+### Onde o investimento de marketing deve ser concentrado para maximizar ROI e lucratividade?
 
-* Age group
-* Account balance quartile
-* Education level
-* Contact type
+A solução cria um modelo analítico capaz de classificar segmentos de clientes com base em:
 
-For each segment the model calculates:
+- taxa de conversão;
+- receita esperada;
+- custo esperado;
+- lucro esperado;
+- retorno sobre investimento (ROI)
 
-* Conversion Rate
-* Campaign Volume
-* Average Campaign Effort
-* Expected Revenue
-* Expected Cost
-* Expected Profit
-* ROI
+O resultado é uma estrutura de priorização orientada a dados.
 
-Segments are then classified into strategic categories:
+## Modelo Analítico
 
-| Category    | Interpretation              |
-| ----------- | --------------------------- |
-| Gold        | Highly profitable segments  |
-| Strong      | Strong ROI segments         |
-| Medium      | Moderate profitability      |
-| Weak        | Low profitability           |
-| Destructive | Segments that destroy value |
+Os segmentos foram construídos combinando variáveis relevantes relacionadas ao perfil do cliente e comportameneto de campanha:
 
-This classification supports **data-driven marketing prioritization**.
+- faixa etária;
+- quartil de saldo financeiro;
+- nível educacional;
+- tipo de contato.
 
----
+Para cada segmento o sistema calcula:
 
-# Dashboard Features
+- taxa de conversão;
+- volume de campanhas;
+- esforço médio da campanha;
+- receita esperada;
+- custo esperado;
+- lucro esperado;
+- ROI.
 
-The project includes an interactive dashboard built with **Dash + Bootstrap**.
+## Classificação Estratégica dos segmentos
 
-Main components:
+Os segmentos são classificados em categorias analíticas:
 
-### Executive KPIs
+| Categoria | Interpretação |
+|:---:|:---:|
+| Gold | Segmentos altamente lucrativos |
+| Strong | Segmentos com forte retorno |
+| Medium | Rentabilidade moderada |
+| Weak | Baixa rentabilidade |
+| Destructive | Segmentos que destroem valor|
 
-* Average Expected Profit
-* Average ROI
-* Highest Segment Profit
-* Percentage of Gold Segments
+Essa classificação permite direcionar investimentos de forma mais eficiente.
 
-### Strategic Visualizations
+## Funcionalidades do Dashboard
 
-* Distribution of segments by category
-* Average profit by category
+O dashboard foi desenvolvido com foco em inteligência analítica e experiÊncia de uso.
 
-### Full Segmentation Table
+### KPIs Executivos
 
-Detailed breakdown of all segments including profitability metrics.
+- lucro médio esperado;
+- ROI médio;
+- maior lucro por segmento;
+- percentual de segmentos Gold.
 
-### Scenario Simulation
+## Visualizações Estratégicas
 
-The simulation module compares two strategies:
+- distribuição de segmentos por categoria;
+- lucro médio por categoria;
+- distribuição analítica dos segmentos.
 
-**Uniform Distribution**
+## Tabela Completa de Segmentação
 
-Marketing investment distributed proportionally across all segments.
+Visualização detalhada contendo:
 
-**Strategic Allocation**
+- métricas financeiras;
+- métricas de conversão;
+- classificação estratégica;
+- indicadores de rentabilidade.
 
-Investment concentrated in high-ROI segments.
+## Simulação de Cenários
 
-Example distribution used:
+O projeto inclui um módulo de simulação para comparação de estratégias de investimento.
 
-* Gold → 70%
-* Strong → 20%
-* Medium → 10%
-* Weak → 0%
-* Destructive → 0%
+### Distribuição Uniforme
 
-The dashboard calculates:
+Investimento distribuído proporcionalmente entre todos os segmentos.
 
-* Expected profit under each scenario
-* Absolute difference
-* Growth percentage
+### Alocação Estratégica
 
----
+Investimento concentrado em segmentos com maior ROI.
 
-# Tech Stack
+### Exemplo de distribuição:
 
-Python
-Pandas
-Dash
-Dash Bootstrap Components
-Plotly
+- Gold → 70%
+- Strong → 20%
+- Medium → 10%
+- Weak → 0%
+- Destructive → 0%
 
----
+O sistema calcula:
 
-# Project Structure
+- lucro esperado;
+- diferença absoluta;
+- crescimento percentual;
+- impacto financeiro da estratégia.
 
-```
+## Estrutura Analítica do Projeto
+
+O projeto foi organizado em módulos para melhorar:
+
+- escalabilidade;
+- manutenção;
+- separação de responsabilidades;
+- evolução futura.
+
+### Estrutura
+
 project
 │
 ├── data
@@ -146,36 +161,198 @@ project
 ├── assets
 │
 └── app.py
+
+## Responsividade e Experiência de Uso
+
+O dashboard foi ajustado para diferentes dispositivos e resoluções, priorizando:
+
+- legibilidade analítica;
+- organização visual;
+- responsividade dos gráficos;
+- experiência mobile;
+- clareza na interpretação dos dados.
+
+## Tecnologias Utilizadas
+
+- Python
+- Pandas
+- Dash
+- Plotly
+- Dash Bootstrap Components
+
+## Roadmap de Evolução
+
+Possíveis evoluções futuras:
+
+- modelagem preditiva de conversão;
+- clusterização avançada;
+- integração com APIs;
+- análises preditivas de ROI;
+- inteligência orientada à retenção.
+
+## Sobre a WS - Web Marketing
+
+A WS - Web Marketing atua na interseção entre marketing, dados e tecnologia (MarTech), desenvolvendo soluções analíticas voltadas para inteligência de mercado, crescimento sustentável e tomada de decisão baseada em dados.
+
+Este projeto representa um case de Marketing Analytics orientado à lucratividade e otimização de campanhas.
+
+# [EN]
+
+## Summary
+
+This project presents a strategic customer segmentation solution focused on marketing campaign profitability optimization.
+
+The dashboard identifies high-value customer segments and supports investment allocation decisions through ROI and profitability analysis.
+
+The solution combines:
+
+- customer segmentation;
+- profitability modeling;
+- ROI analysis;
+- scenario simulation;
+- interactive visualization.
+
+## Strategic Objective
+
+Marketing campaigns often distribute investments uniformly without considering the profitability potential of each segment.
+
+This project aims to answer a key business question:
+
+**Where should marketing investment be concentrated to maximize ROI and profitability?**
+
+The solution builds an analytical model capable of classifying customer segments based on:
+
+- conversion rate;
+- expected revenue;
+- expected cost;
+- expected profit;
+- return on investment (ROI).
+
+The result is a data-driven prioritization framework.
+
+## Analytical Model
+
+Customer segments were created by combining relevant campaign and demographic variables:
+
+- age group;
+- financial balance quartile;
+- education level;
+- contact type.
+
+For each segment the system calculates:
+
+- conversion rate;
+- campaign volume;
+- average campaign effort;
+- expected revenue;
+- expected cost;
+- expected profit;
+- ROI.
+
+## Strategic Segment Classification
+
+Segments are classified into analytical categories:
+
+| Category | Interpretation |
+|:---:|:---:|
+| Gold | Highly profitable segments |
+| Strong | High ROI segments |
+| Medium | Moderate profitability |
+| Weak | Low profitability |
+| Destructive | Value-destroying segment |
+
+This classification supports more efficient investment allocation.
+
+## Dashboard Features
+
+The dashboard was designed focusing on analytical intelligence and user experience.
+
+**Executive KPIs**
+
+- average expected profit;
+- average ROI;
+- highest segment profit;
+- percentage of Gold Segments.
+
+## Strategic Visualizations
+
+- segment distribution by category;
+- average profit by category;
+- analytical segment distribution.
+
+## Complete Segmentation Table
+
+Detailed analytical table including:
+
+- financial metrics;
+- conversion metrics;
+- strategic classification;
+- profitability indicators.
+
+## Scenario Simulation
+
+The project includes a scenario simulation module for comparing investment allocation strategies.
+
+### Uniform Distribution
+
+Marketing investment distributed proportionally across all segments.
+
+### Strategic Allocation
+
+Investment concentrated in higher ROI segments.
+
+**Example allocation:**
+
+- Gold → 70%
+- Strong → 20%
+- Medium → 10%
+- Weak → 0%
+- Destructive → 0
+
+The system calculates:
+
+- expected profit;
+- absolute difference;
+- growth percentage;
+- financial impact.
+
+## Responsiveness and User Experience
+
+The dashboard was optimized for different devices and resolutions, prioritizing:
+
+- analytical readability;
+- visual organization;
+- responsive charts;
+- mobile experience;
+- clarity in data interpretation.
+
+## Techonlogies Used
+
+- Python
+- Pandas
+- Dash
+- Plotly
+- Dash Bootstrap Components
+
+## Future Roadmap
+
+Possible future improvements:
+
+- predictive conversion modeling;
+- advanced clustering;
+- API integrations;
+- predictive ROI analysis;
+- retention-oriented intelligence.
+
+## About WS - Web Marketing
+
+WS - Web Marketing operates at the intersection of marketing, data, and technology (MarTech), developing analytical solutions focused on market intelligence, sustainable growth, and data-driven decision-making.
+
+This repository represents a Marketing Analytics showcase project focused on profitability optimization and campaign intelligence.
+
+## How to Run
+
+```bash
+pip install -r requirements.txt
+python app.py
 ```
-
----
-
-# Portuguese Summary
-
-Este projeto apresenta um **modelo estratégico de segmentação de clientes para campanhas de marketing bancário**.
-
-A análise identifica segmentos com maior potencial de lucratividade utilizando métricas como:
-
-* taxa de conversão
-* receita esperada
-* custo esperado
-* lucro esperado
-* ROI
-
-Os segmentos são classificados em categorias estratégicas (Gold, Strong, Medium, Weak e Destructive) permitindo direcionar investimentos de marketing de forma mais eficiente.
-
-Além da análise, o dashboard inclui uma **simulação de cenários**, comparando:
-
-* distribuição uniforme de investimento
-* alocação estratégica focada em segmentos de alto ROI.
-
----
-
-# Author
-
-Wellington César
-MarTech Consultant
-Strategic Marketing Consultant
-Growth Architecture
-
-WS – Web Marketing

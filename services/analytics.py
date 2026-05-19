@@ -1,6 +1,6 @@
 from services.data_loader import load_bank_data
 import pandas as pd
-from tabulate import tabulate
+#from tabulate import tabulate
 from utils.segmentation import(
     build_segments_fixed,
     classify_segments
@@ -11,7 +11,7 @@ from utils.simulation import(
     simulate_strategic,
     compare_scenarios
 )
-from pprint import pprint
+#from pprint import pprint
 
 def get_segments():
     """
@@ -24,26 +24,26 @@ def get_segments():
     df = preprocess_data(df)
     segments = build_segments_fixed(df)
     segments = classify_segments(segments)
-    print(f"{tabulate(segments, headers = "keys", tablefmt = "grid")}\n")
+    #print(f"{tabulate(segments, headers = "keys", tablefmt = "grid")}\n")
     return segments
 
 def executive_resume():
     #Implementa a lógica do backend para a página Home consumir esses dados
     segments = get_segments()
     total_segments = segments.shape[0]
-    print(f"{total_segments}\n")
+    #print(f"{total_segments}\n")
 
     gold_count = segments[segments["category"] == "Gold"].shape[0]
-    print(f"{gold_count}\n")
+    #print(f"{gold_count}\n")
 
     destructive_count = segments[segments["category"] == "Destructive"].shape[0]
-    print(f"{destructive_count}\n")
+    #print(f"{destructive_count}\n")
 
     roi_gold = (
         segments[segments["category"] == "Gold"]["avg_roi"].mean()
         if gold_count > 0 else 0
     )
-    print(f"{roi_gold}\n")
+    #print(f"{roi_gold}\n")
 
     return {
         "total_segments": total_segments,
@@ -55,7 +55,7 @@ def executive_resume():
 def profit_by_category():
     #calcula o lucro médio para cada categoria de clientes
     segments = get_segments()
-    print(f"{segments}")
+    #print(f"{segments}")
 
     df_category = (
         segments
@@ -66,7 +66,7 @@ def profit_by_category():
         .reset_index()
         .sort_values(by = "avg_profit", ascending = False)
     )
-    print(f"{df_category}")
+    #print(f"{df_category}")
     return df_category
 
 def execute_simulations(base_size = 100000):
@@ -89,6 +89,6 @@ def execute_simulations(base_size = 100000):
         base_size,
         strategic_distribution
     )
-    print(f"{strategic}\n")
-    print(f"{compare_scenarios(uniform, strategic)}\n")
+    '''print(f"{strategic}\n")
+    print(f"{compare_scenarios(uniform, strategic)}\n")'''
     return f"{compare_scenarios(uniform, strategic)}"

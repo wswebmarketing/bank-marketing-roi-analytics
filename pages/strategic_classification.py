@@ -5,8 +5,11 @@ import plotly.express as px
 from services.analytics import(
     get_segments
 )
+'''
+LIBS UTILIZADAS APENAS PARA DESENVOLVIMENTO E TESTES, NÃO SEÃO USADAS PARA DEPLOY
 from pprint import pprint
 from tabulate import tabulate
+'''
 
 segments = get_segments()
 
@@ -29,8 +32,6 @@ fig_distribution = px.bar(
     category_distribution,
     x = "category",
     y = "count",
-    text = "count",
-    title = "Distribuição dos Segmentos de Clientes",
     color = "category",
     labels = {
         "category": "Categoria",
@@ -38,7 +39,11 @@ fig_distribution = px.bar(
     }
 )
 fig_distribution.update_traces(textposition = "outside")
-fig_distribution.update_layout(showlegend = False)
+fig_distribution.update_layout(
+    showlegend = False,
+    font = dict(family = "inherit", size = 12),
+    margin = dict(l = 10, r = 10, t = 40, b = 20)
+)
 
 profit_by_category = (
     segments
@@ -52,8 +57,6 @@ fig_profit = px.bar(
     profit_by_category,
     x = "category",
     y = "expected_profit",
-    text = "expected_profit",
-    title = "Lucro Médio por Categoria",
     color = "category",
     labels = {
         "category": "Categoria",
@@ -64,7 +67,11 @@ fig_profit.update_traces(
     texttemplate = "%{text:.2f}",    
     textposition = "outside"
 )
-fig_profit.update_layout(showlegend = False)
+fig_profit.update_layout(
+    showlegend = False,
+    font = dict(family = "inherit", size = 12),
+    margin = dict(l = 10, r = 10, t = 40, b = 20)
+)
 
 table_data = profit_by_category.to_dict("records")
 table_columns = [
@@ -87,9 +94,14 @@ layout = html.Div(
                         "Classificação Estratégica de Segmentos",
                         className = "text-center fw-bold"
                     ),
-                    html.P(
-                        "Classificação dos segmentos com base na lucratividade esperada e no ROI.",
-                        className = "text-justify mt-3"
+                    html.Div(
+                        [
+                            html.P(
+                                "Classificação dos segmentos com base na lucratividade esperada e no ROI.",
+                                className = "text-justify"
+                            )
+                        ],
+                        className = "p-3"
                     )
                 ],
                 width = 12
@@ -166,7 +178,7 @@ layout = html.Div(
                     xs = 12, sm = 12, md = 3, lg = 3, xl = 3
                 )
             ],
-            className = "p-5"
+            className = "g-4 p-2"
         ),
         dbc.Row(
             [
@@ -174,8 +186,20 @@ layout = html.Div(
                     dbc.Card(
                         dbc.CardBody(
                             [
+                                html.H5(
+                                    "Distribuição dos Segmentos de Clientes",
+                                    className = "text-center fw-bold"
+                                ),
                                 dcc.Graph(
-                                    figure = fig_distribution
+                                    figure = fig_distribution,
+                                    responsive = True,
+                                    config = {
+                                        "displayModeBar": False
+                                    },
+                                    style = {
+                                        "width": "100%",
+                                        "height": "400px"
+                                    }
                                 )
                             ]
                         )
@@ -186,8 +210,20 @@ layout = html.Div(
                     dbc.Card(
                         dbc.CardBody(
                             [
+                                html.H5(
+                                    "Lucro Médio por Categoria",
+                                    className = "text-center fw-bold"
+                                ),
                                 dcc.Graph(
-                                    figure = fig_profit
+                                    figure = fig_profit,
+                                    responsive = True,
+                                    config = {
+                                        "displayModeBar": False
+                                    },
+                                    style = {
+                                        "width": "100%",
+                                        "height": "400px"
+                                    }
                                 )
                             ]
                         )
@@ -195,7 +231,7 @@ layout = html.Div(
                     xs = 12, sm = 12, md = 6, lg = 6, xl = 6
                 )
             ],
-            className = "p-5"
+            className = "g-4 p-2"
         ),
         dbc.Row(
             [
@@ -223,8 +259,8 @@ layout = html.Div(
                     width = 12
                 )
             ],
-            className = "p-5"
+            className = "g-4 p-2"
         )
     ],
-    className = "container p-5"
+    className = "p-2 p-xs-2 p-sm-2 p-md-5 container"
 )

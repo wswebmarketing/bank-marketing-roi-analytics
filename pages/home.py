@@ -39,13 +39,19 @@ fig = px.bar(
     category_distribution,
     x = "category",
     y = "count",
-    title = "Distribuição Estratégica dos Segmentos",
     color = "category",
-    text = "count",
-    template = "plotly"
+    template = "plotly",
+    labels = {
+        "category": "Categoria",
+        "count": "Número de Clientes"
+    }
 )
 fig.update_traces(textposition = "outside")
-fig.update_layout(showlegend = False)
+fig.update_layout(
+    showlegend = False,
+    font = dict(family = "inherit", size = 12),
+    margin = dict(l = 10, r = 10, t = 40, b = 20)
+)
 
 dash.register_page(
     __name__,
@@ -54,7 +60,7 @@ dash.register_page(
 )
 
 layout = html.Div(
-    className = "p-5 container",
+    className = "p-2 p-xs-2 p-sm-2 p-md-5 container",
     children = [
         dbc.Row(
             [
@@ -73,9 +79,11 @@ layout = html.Div(
                             ],
                             className = "p-3",
                         )
-                    ]
+                    ],
+                    width = 12
                 )
-            ]
+            ],
+            className = "g-4"
         ),
         dbc.Row(
             [
@@ -148,7 +156,7 @@ layout = html.Div(
                     xs = 12, sm = 12, md = 3, lg = 3, xl = 3
                 )
             ],
-            className = "p-3"
+            className = "g-4 p-2"
         ),
         dbc.Row(
             [
@@ -156,19 +164,31 @@ layout = html.Div(
                     dbc.Card(
                         dbc.CardBody(
                             [
-                                html.H5(
+                                html.H4(
                                     "Visão geral de performance",
                                     className = "fw-bold text-center"
                                 ),
+                                html.H5(
+                                    "Distribuição estratégica dos segmentos",
+                                    className = "text-center fw-bold"
+                                ),
                                 dcc.Graph(
-                                    figure = fig
+                                    figure = fig,
+                                    responsive = True,
+                                    config = {
+                                        "displayModeBar": False
+                                    },
+                                    style = {
+                                        "width": "100%",
+                                        "height": "400px"
+                                    }
                                 )
                             ]
                         )
                     )
                 )
             ],
-            className = "p-3"
+            className = "g-4 p-2"
         ),
         dbc.Row(
             [
@@ -208,7 +228,7 @@ layout = html.Div(
                                     ),
                                     html.P(
                                         "Análise categorizada por potencial de lucro.",
-                                        className = "card-texttext-justify"
+                                        className = "card-text text-justify"
                                     ),
                                     dbc.Button(
                                         "Ver classificação",
@@ -248,7 +268,7 @@ layout = html.Div(
                     xs = 12, sm = 12, md = 4, lg = 4, xl = 4
                 )
             ],
-            className = "p-3"
+            className = "g-4 p-2"
         ),
         dbc.Row(
             [
@@ -271,7 +291,7 @@ layout = html.Div(
                     ]
                 )
             ],
-            className = "p-3"
+            className = "g-4 p-2"
         )
     ]
 )
