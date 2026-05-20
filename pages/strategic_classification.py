@@ -63,8 +63,7 @@ fig_profit = px.bar(
         "expected_profit": "Lucro Médio ($)"
     }
 )
-fig_profit.update_traces(
-    texttemplate = "%{text:.2f}",    
+fig_profit.update_traces(  
     textposition = "outside"
 )
 fig_profit.update_layout(

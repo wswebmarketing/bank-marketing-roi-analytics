@@ -65,13 +65,13 @@ fig_profit = px.bar(
     x = "category",
     y = "expected_profit",
     color = "category",
+    #text_auto = ".2f",
     labels = {
         "category": "Categoria",
         "expected_profit": "Lucro Esperado ($)"
     }
 )
 fig_profit.update_traces(
-    texttemplate = "%{text:.2f}",
     textposition = "outside"
 )
 fig_profit.update_layout(
