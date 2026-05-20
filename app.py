@@ -12,6 +12,8 @@ app = Dash(
     suppress_callback_exceptions = True,
 )
 
+server = app.server
+
 app.layout = html.Div([
     header(),
     html.Div(
