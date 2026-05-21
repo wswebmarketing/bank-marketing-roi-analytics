@@ -1,5 +1,11 @@
 # Bank Marketing Strategic Segmentation Dashboard
 
+## Live Demo
+
+Access the deployed analytical dashboard
+
+[https://bank-marketing-roi-analytics.onrender.com]
+
 ## Profitability-Oriented Customer Intelligence
 
 Analytical dashboard designed to identify high-value customer segments in marketing campaigns and optimize budget allocation through profitability and ROI analysis
@@ -179,6 +185,18 @@ O dashboard foi ajustado para diferentes dispositivos e resoluções, priorizand
 - Dash
 - Plotly
 - Dash Bootstrap Components
+
+## Deployment
+
+This dashboard is publicity deployed using Render.
+
+Production deployment includes:
+
+- responsive analytical interface;
+- cloud deployment architecture;
+- product dependency management;
+- scalable dashboard structure;
+- responsive visualization system.
 
 ## Roadmap de Evolução
 
