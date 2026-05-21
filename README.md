@@ -6,6 +6,14 @@ Access the deployed analytical dashboard
 
 [https://bank-marketing-roi-analytics.onrender.com]
 
+## Dashboard Preview
+
+<img src = "assets/imagem-1.jpeg" alt = "Imagem relacionada ao dashboard de análise dados sobre as estratégias de Marketing em um banco" style = "width: 100%; max-width: 100%;">
+
+<img src = "assets/imagem-2.jpeg" alt = "Imagem do dashboard com modo escuro ativado" style = "width: 100%; max-width: 100%;">
+
+<img src = "assets/imagem-3.jpeg" alt = "Imagem do dashboard com o modo claro ativado" style = "width: 100%; max-width: 100%;">
+
 ## Profitability-Oriented Customer Intelligence
 
 Analytical dashboard designed to identify high-value customer segments in marketing campaigns and optimize budget allocation through profitability and ROI analysis
